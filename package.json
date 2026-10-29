@@ -1,0 +1,20 @@
+{
+  "name": "support-tickets-api",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "typecheck": "bun check"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma": "^8.0.0-rc.28"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.10.1",
+    "hono": "^4.13.14"
+  }
+}

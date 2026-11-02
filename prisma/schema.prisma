@@ -1,0 +1,15 @@
+// Fuente de los modelos usados.
+// 1- configuracion
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+
+// 2- MODELOS
+

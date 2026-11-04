@@ -2,6 +2,8 @@
 import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { cors } from 'hono/cors'
+import authRoutes from './routes/auth'
+
 
 // Definimos el tipo de variables que pasaremos por el contexto (luego añadiremos el usuario)
 type Env = {
@@ -22,7 +24,8 @@ export function createApp() {
     c.set('requestId', crypto.randomUUID())
     await next()
   })
-
+  // rutas auth
+  app.route('/api/auth', authRoutes)
   // Ruta de prueba (Health Check)
   app.get('/health', (c) => {
     return c.json({ 

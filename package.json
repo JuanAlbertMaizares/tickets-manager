@@ -14,10 +14,12 @@
     "typescript": "^7"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.9.1",
     "@libsql/client": "^0.18.0",
     "@prisma/adapter-better-sqlite3": "^7.10.1",
     "@prisma/adapter-libsql": "^7.10.1",
     "@prisma/client": "7",
-    "hono": "^4.13.14"
+    "hono": "^4.13.14",
+    "zod": "^4.6.7"
   }
 }

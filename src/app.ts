@@ -3,12 +3,14 @@ import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { cors } from 'hono/cors'
 import authRoutes from './routes/auth'
+import type { User } from '../generated/prisma/client'
 
 
 // Definimos el tipo de variables que pasaremos por el contexto (luego añadiremos el usuario)
 type Env = {
   Variables: {
-    requestId: string
+    requestId: string,
+    user: User
   }
 }
 

@@ -3,6 +3,7 @@ import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { cors } from 'hono/cors'
 import authRoutes from './routes/auth'
+import ticketsRoutes from "./routes/tickets";
 import type { User } from '../generated/prisma/client'
 
 
@@ -26,8 +27,11 @@ export function createApp() {
     c.set('requestId', crypto.randomUUID())
     await next()
   })
+
   // rutas auth
-  app.route('/api/auth', authRoutes)
+  app.route('/api/auth', authRoutes),
+  app.route('/api/tickets', ticketsRoutes)
+  
   // Ruta de prueba (Health Check)
   app.get('/health', (c) => {
     return c.json({ 
